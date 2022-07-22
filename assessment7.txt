@@ -1,0 +1,242 @@
+1. Write a program to find the Nth term of the Fibonnaci series.
+#include<stdio.h>
+int main()
+{
+    int a=-1,b=1,c,n;
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    for (int i = 1; i <=n; i++)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+    }
+    printf("%d ",c);
+
+    return 0;
+
+}
+2. Write a program to print first N terms of Fibonacci series
+#include<stdio.h>
+int main()
+{
+    int a=-1,b=1,c,n;
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    for (int i = 1; i <=n; i++)
+    {
+        c=a+b;
+        printf("%d ",c);
+        a=b;
+        b=c;
+    }
+
+    return 0;
+
+}
+
+3. Write a program to check whether a given number is there in the Fibonacci
+series or not.
+#include <stdio.h>
+int main()
+{
+    int a = -1, b = 1, c, n;
+    printf("Enter a number\n");
+    scanf("%d", &n);
+    for (int i = 1; i; i++)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+        if (c == n)
+        {
+            printf(" fibonachi series");
+            break;
+        }
+        if (c > n)
+        {
+            printf(" not fibonaci seri");
+            break;
+        }
+    }
+
+    return 0;
+}
+4. Write a program to calculate HCF of two numbers
+#include<stdio.h>
+int main()
+{
+    int a,b ,g,i;
+    printf("Enter  two number");
+    scanf("%d%d",&a,&b);
+    for ( i = 1; i <=a || i<=b; i++)
+    {
+        if ((a%i==0)&&(b%i==0) )
+        {
+            g=i;
+        }
+    }
+     printf("%d",g);
+    return 0;
+}
+5. Write a program to check whether two given numbers are co-prime
+numbers or not
+#include <stdio.h>
+int main()
+{
+    int a, b, g, i;
+    printf("Enter  two number");
+    scanf("%d%d", &a, &b);
+    for (i = 1; i <= a || i <= b; i++)
+    {
+        if ((a % i == 0) && (b % i == 0))
+        {
+            g = i;
+        }
+    }
+
+    if (g == 1)
+    {
+        printf("Co prime number");
+    }
+    else
+    {
+        printf(" not co prime numbers");
+    }
+
+    return 0;
+}
+6. Write a program to print all Prime numbers under 100
+#include <stdio.h>
+int main()
+{
+    int i,num , flag=0;
+
+    for (int num = 1; num<100; num++)
+    {
+         flag=0;
+         for (int i =2; i <num/2; i++)
+         {
+            if(num%i==0)
+            {
+                flag=1;
+
+            }
+         }
+         if (flag==0)
+         {
+        printf("%d ",num);
+
+         }
+
+    }
+
+    return 0;
+}
+7. Write a program to print all Prime numbers between two given numbers
+#include <stdio.h>
+int main()
+{
+    int i, num, flag = 0, a, b;
+    printf("Enter two  numbers");
+    scanf("%d%d", &a, &b);
+
+    for (int num = a; num <= b; num++)
+    {
+        flag = 0;
+        for (int i = 2; i <= num / 2; i++)
+        {
+            if (num % i == 0)
+            {
+                flag = 1;
+            }
+        }
+        if (flag == 0)
+        {
+            printf("%d ", num);
+        }
+    }
+    return 0;
+}
+8. Write a program to find next Prime number of a given number
+#include <stdio.h>
+int main()
+{
+    int i, num, flag = 0, a;
+    printf("Enter a  numbers");
+    scanf("%d", &a);
+
+    for (int num = a; 1; num++)
+    {
+        flag = 0;
+        for (int i = 2; i < num / 2; i++)
+        {
+            if (num % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+        {
+            printf("%d ", num);
+            break;
+        }
+    }
+    return 0;
+}
+9. Write a program to check whether a given number is an Armstrong number
+or not
+#include<stdio.h>
+int main()
+{
+    int n , r, sum=0,temp;
+    printf("Enter a number");
+    scanf("%d",&n);
+    temp =n;
+    while (n>0)
+    {
+        r=n%10;
+        sum = sum +(r*r*r);
+        n=n/10;
+    }
+    if (temp==sum)
+    {
+        printf("armstron numbers");
+    }
+    else
+    {
+        printf("not armstron number");
+    }
+    return 0;
+
+}
+
+10. Write a program to print all Armstrong numbers under 1000
+#include <stdio.h>
+int main()
+{
+
+    int no, temp, rem, sum, count = 0;
+
+    printf("Armstrong numbers between 1 and 1000 are:\n");
+    for (no = 1; no <= 1000; no++)
+    {
+        temp = no;
+        sum = 0;
+        while (temp > 0)
+        {
+            rem = temp % 10;
+            sum = sum + (rem * rem * rem);
+            temp = temp / 10;
+        }
+        if (no == sum)
+        {
+            printf("\n%d", no);
+            count++;
+        }
+    }
+    printf("%d", count);
+
+    return 0;
+}
